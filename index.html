@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    body {
+      margin: 0px;
+    }
+
+    .container .box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .main_class {
+      width: 50%;
+      padding: 10px;
+      margin-right: 0px;
+      margin-left: 50px;
+    }
+
+    .parent {
+      border: 1px solid black;
+      border-radius: 25px;
+      width: 55%;
+      margin: 0 auto;
+      background-color: white;
+      height: 500px;
+    }
+
+    .sub_class {
+      margin-right: 20px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      height: 500px;
+    }
+
+    .maintext {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .subtext {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .listcontent {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .contentone {
+      margin: 0px;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+    }
+
+    .contentone .imgone {
+      margin-right: 10px;
+    }
+
+    .contenttwo {
+      margin: 0px;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .contenttwo .imgtwo {
+      margin-right: 10px;
+    }
+
+    .contentthree {
+      margin: 0px;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .contentthree .imgthree {
+      margin-right: 10px;
+    }
+
+    .emailtext {
+      font-family: 'Roboto', sans-serif;
+      font-size: 10px;
+      margin-top: 30px;
+    }
+
+    .inptxt {
+      height: 40px;
+      width: 350px;
+      border-radius: 5px;
+    }
+
+    .subbtn {
+      margin-top: 20px;
+      height: 50px;
+      background-color: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      width: 355px;
+      border-radius: 5px;
+    }
+
+    .mainparent {
+      background-color: #36384d;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signimage {
+      height: 450px;
+    }
+
+    .mainerror {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #errormsg {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-right: 70px;
+      padding-top: 18px;
+    }
+
+    .subparent {
+      background-color: white;
+      height: 350px;
+      width: 350px;
+      border-radius: 45px;
+      display: none;
+    }
+
+    .successimg {
+      width: 50px;
+    }
+
+    .maincontent {
+      margin-left: 50px;
+      margin-top: 40px;
+    }
+
+    .main_text {
+      font-size: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .sub_text {
+      font-size: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .finalbtn {
+      background-color: black;
+      color: white;
+      width: 80%;
+      height: 40px;
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+
+      .container .box {
+        flex-direction: column-reverse;
+      }
+
+    
+
+      .parent {
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+        height: auto;
+      }
+      .sub_class{
+        margin-top:0;
+        margin-bottom: 0;
+        margin-right: 0;
+        height: auto;
+      }
+      
+      .subtext{
+        font-size: 12px;
+      }
+      .listcontent{
+        font-size: 12px;
+      }
+      .main_class{
+        width:auto;
+        margin-right: 0;
+        margin-left: 0;
+        padding:0;
+      }
+      .inptxt {
+        width:290px;
+
+      }
+      .subbtn{
+        width:297px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mainparent">
+    <div class="subparent" id="nextcontent">
+      <div class="maincontent">
+        <img class="successimg" src="./assets/images/icon-list.svg" alt="">
+        <h3 class="main_text">Thanks for <br> subscribing!</h3>
+        <h4 class="sub_text">A confirmation email has been sent <br> <span id="emailid"></span> Please open it and <br>
+          click the button inside to confirm your subscription</h4>
+        <button class="finalbtn">Dissmiss message</button>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="parent" id="present">
+      <div class="container">
+        <div class="box">
+          <div class="main_class">
+            <h1 class="maintext">Stay updated!</h1>
+            <p class="subtext">join 60,000+ product managers recieveing monthly <br> updates on</p>
+            <ul class="listcontent">
+              <li>
+                <p class="contentone"><img class="imgone" src="./assets/images/icon-list.svg" alt="">Product discovery
+                  and building what matters</p>
+              </li>
+              <li>
+                <p class="contenttwo"><img class="imgtwo" src="./assets/images/icon-list.svg" alt="">Measuring to ensure
+                  updates are a success</p>
+              </li>
+              <li>
+                <p class="contentthree"><img class="imgthree" src="./assets/images/icon-list.svg" alt="">And much more!
+                </p>
+              </li>
+            </ul>
+            <div class="mainerror">
+              <div class="texterrormsg">
+                <h3 class="emailtext">Email address</h3>
+              </div>
+              <div class="displaymsg">
+                <p id="errormsg"></p>
+              </div>
+
+
+            </div>
+
+            <input class="inptxt" type="text" placeholder="email@compamny.com" id="subscribeinp">
+            <br>
+            <button class="subbtn" type="submit" onclick="checkvaladation()">subscribe to my monthly
+              newsletter</button>
+          </div>
+          <div class="sub_class">
+            <img class="signimage" src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function checkvaladation() {
+      let myinp = document.getElementById("subscribeinp")
+      let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      let validmsg = document.getElementById("errormsg");
+      let nextblock = document.getElementById("nextcontent");
+      let currentblock = document.getElementById("present");
+      let finalemail = document.getElementById("emailid")
+
+
+      if (validRegex.test(myinp.value)) {
+        currentblock.style.display = "none";
+        nextblock.style.display = "block";
+        finalemail.innerText = myinp.value;
+
+
+      }
+      else {
+        validmsg.innerText = "invalid message";
+        validmsg.style.color = "red";
+        myinp.style.border = "1px solid red"
+        myinp.style.background = "#ffe8e6"
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
